@@ -53,7 +53,7 @@ int main(void)
     // check algorithm result
     if(Total % 10 != 0)
     {
-        printf("INVALID\n");
+        printf("INVALID");
         return 0;
     }
 
@@ -81,7 +81,7 @@ int main(void)
             printf("MASTERCARD\n");
         }
 
-    else if ((length == 13 || length == 16))
+    else if ((length == 13 || length == 16) && (num >= 40 && num <= 49))
         {
             printf("VISA\n");
         }
