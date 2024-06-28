@@ -1,11 +1,11 @@
-#include <stdio.h>
 #include <cs50.h>
+#include <stdio.h>
 
 long card_number;
 int length = 0;
 
 int main(void)
-{
+{   
     // get creditcard number
     card_number = get_long("Number: ");
 
