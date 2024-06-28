@@ -1,11 +1,10 @@
 #include <cs50.h>
 #include <stdio.h>
 
-long card_number;
-
 int main(void)
 {
     // get creditcard number
+    long card_number;
     card_number = get_long("Number: ");
 
     // get length of creditcard number
@@ -31,7 +30,7 @@ int main(void)
     int Total = 0;
     long x = card_number;
     do
-    
+
     {
         // get last digit
         last_digit = x % 10;
