@@ -5,7 +5,7 @@ long card_number;
 int length = 0;
 
 int main(void)
-{   
+{
     // get creditcard number
     card_number = get_long("Number: ");
 
@@ -32,12 +32,12 @@ int main(void)
     {
         //  remove last digit
         last_digit = x % 10;
-        x = x / 10;
-        Sum1 = Sum1 + last_digit;
+        x /= 10;
+        Sum1 += last_digit;
 
         // remove last digit and solve doubled
         second_last_digit = x % 10;
-        x = x / 10;
+        x /= 10;
 
         // adding digits to sum
         second_last_digit = second_last_digit * 2;
@@ -57,17 +57,18 @@ int main(void)
     }
 
     // Removes all the digits from card number except first 2
-    int first, second, num;
+    int first_digit, second_digit, num;
     while (card_number >= 100)
     {
         card_number /= 10;
     }
-
-    // Gets first two digits
-    second = card_number % 10;
+    // Gets first digit
+    second_digit = card_number % 10;
     card_number /= 10;
-    first = card_number % 10;
-    num = first * 10 + second;
+
+    // Gets second digit and combine
+    first_digit = card_number % 10;
+    num = first_digit * 10 + second_digit;
 
     // check which card
     if ((length == 15) && (num == 34 || num == 37))
