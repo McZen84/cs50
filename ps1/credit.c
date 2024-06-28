@@ -30,7 +30,6 @@ int main(void)
     int Total = 0;
     long x = card_number;
     do
-
     {
         // get last digit
         last_digit = x % 10;
