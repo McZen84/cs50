@@ -47,7 +47,7 @@ int main(void)
         // add up d1 + d2
         int d1 = second_last_digit % 10;
         int d2 = second_last_digit / 10;
-        Sum2 = Sum2 + d1 + d2;
+        Sum2 += d1 + d2;
     }
 
     while (x > 0);
@@ -60,7 +60,7 @@ int main(void)
         return 0;
     }
 
-    // Calculate the first number of digits
+    // calculate the first number of digits
     long num;
     while (card_number >= 100)
     {
