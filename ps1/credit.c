@@ -12,7 +12,7 @@ int main(void)
     int length = 0;
     while (l > 0)
     {
-        l = (l / 10);
+        l /= 10;
         length++;
     }
 
