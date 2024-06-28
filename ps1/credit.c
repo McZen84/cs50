@@ -59,7 +59,7 @@ int main(void)
         return 0;
     }
 
-    // calculate the first number of digits
+    // get the first 2 digits
     long num;
     while (card_number >= 100)
     {
