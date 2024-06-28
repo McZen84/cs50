@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 long card_number;
-int length = 0;
 
 int main(void)
 {
@@ -11,17 +10,20 @@ int main(void)
 
     // get length of creditcard number
     long l = card_number;
+    int length = 0;
     while (l > 0)
     {
         l = (l / 10);
         length++;
     }
+
     // check length
     if (length != 13 && length != 15 && length != 16)
     {
         printf("INVALID\n");
         return 0;
     }
+
     // calculate checksum
     int last_digit, second_last_digit;
     int Sum1 = 0;
@@ -29,18 +31,21 @@ int main(void)
     int Total = 0;
     long x = card_number;
     do
+    
     {
-        //  remove last digit
+        // get last digit
         last_digit = x % 10;
         x /= 10;
         Sum1 += last_digit;
 
-        // remove last digit and solve doubled
+        // get second last digit
         second_last_digit = x % 10;
         x /= 10;
 
-        // adding digits to sum
-        second_last_digit = second_last_digit * 2;
+        // multiply * 2
+        second_last_digit *= 2;
+
+        // add up d1 + d2
         int d1 = second_last_digit % 10;
         int d2 = second_last_digit / 10;
         Sum2 = Sum2 + d1 + d2;
@@ -56,19 +61,13 @@ int main(void)
         return 0;
     }
 
-    // Removes all the digits from card number except first 2
-    int first_digit, second_digit, num;
+    // Calculate the first number of digits
+    long num;
     while (card_number >= 100)
     {
         card_number /= 10;
+        num = card_number % 100;
     }
-    // Gets first digit
-    second_digit = card_number % 10;
-    card_number /= 10;
-
-    // Gets second digit and combine
-    first_digit = card_number % 10;
-    num = first_digit * 10 + second_digit;
 
     // check which card
     if ((length == 15) && (num == 34 || num == 37))
