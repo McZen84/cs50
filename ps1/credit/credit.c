@@ -53,7 +53,7 @@ int main(void)
     // check algorithm result
     if(Total % 10 != 0)
     {
-        printf("INVALID");
+        printf("INVALID\n");
         return 0;
     }
 
