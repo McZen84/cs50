@@ -72,12 +72,10 @@ int main(void)
     {
         printf("AMEX\n");
     }
-
     else if ((length == 16) && (num >= 51 && num <= 55))
     {
         printf("MASTERCARD\n");
     }
-
     else if ((length == 13 || length == 16) && (num >= 40 && num <= 49))
     {
         printf("VISA\n");
