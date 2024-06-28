@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <cs50.h>
-#include <string.h>
 
 long card_number;
 int length = 0;
