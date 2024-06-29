@@ -6,7 +6,6 @@
 
 int main(int argc, string argv[])
 {
-
     // check for 2 arguments
     if (argc != 2)
     {
@@ -23,7 +22,7 @@ int main(int argc, string argv[])
             return 1;
         }
     }
-
+    
     // get cypher key
     int key = atoi(argv[1]);
     {
@@ -38,7 +37,6 @@ int main(int argc, string argv[])
             {
                 printf("%c", ((text[i] - 97 + key) % 26) + 97);
             }
-
             else
             {
                 printf("%c", ((text[i] - 65 + key) % 26) + 65);
