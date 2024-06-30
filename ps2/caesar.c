@@ -6,41 +6,38 @@
 
 int main(int argc, string argv[])
 {
-    // check for 2 arguments
+    // check arguments
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
+    
+    // shift
+    int k = atoi(argv[1]);
 
-    // check for alphabeticals
-    for (int i = 0; argv[1][i] != '\0'; i++)
+    // get user input and check for alphabeticals
+    string str = get_string("Plain: ");
     {
-        if (isalpha(argv[1][i]) != 0)
-        {
-            printf("Usage: ./caesar key\n");
-            return 1;
-        }
+        for (int i = 0; str[i] != '\0'; i++)
+
+            if (!isalpha(str[i]))
+            {
+                printf("Input must only contain letters (a-z or A-Z).\n");
+                return 1;
+            }
     }
     
-    // get cypher key
-    int key = atoi(argv[1]);
-    {
-        // get plaintext
-        string text = get_string("Plaintext: ");
-
-        // ciphertext = (plaintext + shift) % 26) shift)
-        printf("Ciphertext: ");
-        for (int i = 0, n = strlen(text); i < n; i++)
-
-            if (islower(text[i]))
-            {
-                printf("%c", ((text[i] - 97 + key) % 26) + 97);
-            }
-            else
-            {
-                printf("%c", ((text[i] - 65 + key) % 26) + 65);
-            }
-    }
+    // cipher
+    printf("Ciphertext: ");
+    for (int i = 0, n = strlen(str); i < n; i++)
+        if (islower(str[i]))
+        {
+            printf("%c", ((str[i] - 'a' + k) % 26) + 'a');
+        }
+        else
+        {
+            printf("%c", ((str[i] - 'A' + k) % 26) + 'A');
+        }
     printf("\n");
 }
